@@ -1,10 +1,12 @@
 
 // -*- mode: c++ -*-
 
-// ----------------------------------------------------------
-// Jordi Bataller i Mascarell
-// 2019-07-07
-// ----------------------------------------------------------
+/**
+ * PuertoSerie
+ * Fichero del puerto serie conectado
+ * Alberto Valls Martinez
+ * 26/10/21
+ */
 
 #ifndef PUERTO_SERIE_H_INCLUIDO
 #define PUERTO_SERIE_H_INCLUIDO
@@ -17,14 +19,19 @@
 class PuertoSerie  {
 
 public:
-  // .........................................................
-  // .........................................................
+/**
+ * PuertoSerie()
+ * 
+ * Constructor que inicializa el PuertoSerie
+ */
   PuertoSerie (long baudios) {
 	Serial.begin( baudios );
 	// mejor no poner esto aquí: while ( !Serial ) delay(10);   
   } // 
 
   /**
+   * 
+   * esperarDisponible()
    * Metodo que hace un delay mientras el puerto serie esté no disponible
    * 
    */
@@ -37,6 +44,8 @@ public:
   } // ()
 
   /**
+   * 
+   * T->escribir()
    * Metodo que utilizamos para escribir un mensaje de tipo T(cualquier tipo de dato)
    * 
    */

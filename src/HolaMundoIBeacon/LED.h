@@ -3,12 +3,16 @@
 #ifndef LED_H_INCLUIDO
 #define LED_H_INCLUIDO
 
-// ----------------------------------------------------------
-// Jordi Bataller i Mascarell
-// 2019-07-07
-// ----------------------------------------------------------
+/**
+ * LED
+ * Fichero para modificar el LED
+ * Alberto Valls Martinez
+ * 26/10/21
+ */
 
 /**
+ * z->esperar()
+ * 
  * Metodo que provoca un delay 
  * 
  * @param tiempo El parametro tiempo identifica al tiempo que tiene que realizar el delay
@@ -30,6 +34,8 @@ private:
 public:
 
   /**
+   * Z->LED()
+   * 
    * constructor del LED al que asignamos un numero de pin y un estado para el LED 
    * inicializamos la variable encendido en false y el pin empezará apagado al llamar a apagar()
    * 
@@ -47,6 +53,8 @@ public:
   // .........................................................
 
   /**
+   * 
+   * encender()
    * Metodo que cambia el estado del LED y lo enciende.Cambiando encendido a true.
    * 
    *
@@ -57,6 +65,8 @@ public:
   }
 
   /**
+   * 
+   * apagar()
    * Metodo que cambia el estado del LED y lo apaga. Cambiando encendido a false.
    */
   void apagar () {
@@ -65,6 +75,7 @@ public:
   }
 
   /**
+   * alternar()
    * Metodo que alterna el estado del LED entre encendido y apagado.
    */
   void alternar () {
@@ -76,6 +87,7 @@ public:
   } // ()
 
   /**
+   * brillar()
    * Metodo que enciende el LED espera un tiempo y depués lo apaga.
    */
   void brillar (long tiempo) {

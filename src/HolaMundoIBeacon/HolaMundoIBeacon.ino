@@ -1,11 +1,11 @@
-// -*-c++-*-
+  // -*-c++-*-
 
-// --------------------------------------------------------------
-//
-// Jordi Bataller i Mascarell
-// 2019-07-07
-//
-// --------------------------------------------------------------
+/**
+ * HolaMundoIBeacon
+ * Fichero donde llamamos a los demás metodos
+ * Alberto Valls Martinez
+ * 26/10/21
+ */
 
 // https://learn.sparkfun.com/tutorials/nrf52840-development-with-arduino-and-circuitpython
 

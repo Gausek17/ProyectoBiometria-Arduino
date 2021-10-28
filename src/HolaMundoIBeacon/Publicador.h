@@ -1,8 +1,11 @@
 // -*- mode: c++ -*-
 
-// --------------------------------------------------------------
-// Jordi Bataller i Mascarell
-// --------------------------------------------------------------
+/**
+ * Publicador
+ * Fichero donde publicamos los valores recogidos
+ * Alberto Valls Martinez
+ * 26/10/21
+ */
 
 #ifndef PUBLICADOR_H_INCLUIDO
 #define PUBLICADOR_H_INCLUIDO
@@ -14,7 +17,7 @@ class Publicador {
 
   
 private:
-//identificamos el tipo de beacon que queremos medir
+//identificamos el tipo de beacon que queremos medir guardándolo como un texto
   uint8_t beaconUUID[16] = { 
 	'A', 'L', 'B', 'E', 'R', 'T', 'O', 'V', 
 	'A', 'L', 'L', 'S', '-', 'G', 'T', 'I'
@@ -23,7 +26,7 @@ private:
 public:
 //creamos una emisora con la que mandaremos los datos
   EmisoraBLE laEmisora {
-	"GTI-3A", //  nombre emisora
+	"GTI-Alberto", //  nombre emisora
 	  0x004c, // fabricanteID (Apple)
 	  4 // txPower
 	  };
@@ -41,6 +44,8 @@ public:
   };
 
   /**
+   * Publicador()
+   * 
    * Constructor de publicador
    */
   Publicador( ) {
@@ -49,6 +54,8 @@ public:
   } // ()
 
   /**
+   * encenderEmisora()
+   * 
    * Metodo que sirve para encender la Emisora
    */
   void encenderEmisora() {
@@ -56,6 +63,8 @@ public:
   } // ()
 
   /**
+   * Z,N,Z ->publicarCO2()
+   * 
    * Metodo que publica los datos recogidos
    * 
    * @param valorCO2 medida del CO2
@@ -68,7 +77,8 @@ public:
 	//
 	// 1. empezamos anuncio
 	//
-  
+
+  //ponemos en los 8 primeros bits el id de la medicion y en los otros 8 el contador
 	uint16_t major = (MedicionesID::CO2 << 8) + contador;
 	(*this).laEmisora.emitirAnuncioIBeacon( (*this).beaconUUID, 
 											major,
@@ -89,6 +99,8 @@ public:
   } // ()
 
 /**
+ * 
+ * Z,N,Z ->publicarTemperatura()
  * Metodo para publicar la temperatura
  * 
  * @param valorTemperatura valor recogido de la temperatura
